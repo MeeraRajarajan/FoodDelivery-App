@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parentlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="414dp"
+        android:layout_height="726dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-2dp"
+        tools:layout_editor_absoluteY="-1dp">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/internetimage"
+            android:layout_marginBottom="35dp"
+            app:srcCompat="@drawable/logo_removebg_preview" />
+
+        <ImageView
+            android:id="@+id/internetimage"
+            android:layout_width="157dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            app:srcCompat="@drawable/internet"
+            tools:ignore="ExtraText,NotSibling" />
+
+        <TextView
+            android:id="@+id/internetchk"
+            android:layout_width="336dp"
+            android:layout_height="45dp"
+            android:layout_below="@+id/internetimage"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="44dp"
+            android:layout_marginTop="54dp"
+            android:gravity="center"
+            android:text="Check your Internet Connection"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="75dp"
+            tools:layout_editor_absoluteY="168dp" />
+
+        <Button
+            android:id="@+id/btnGuest"
+            android:layout_width="280dp"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="124dp"
+            android:backgroundTint="@color/white"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="Continue as Guest"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.481"
+            tools:ignore="NotSibling" />
+
+        <Button
+            android:id="@+id/btnSignup"
+            android:layout_width="129dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnGuest"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="63dp"
+            android:backgroundTint="@color/white"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="SignUp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.584" />
+
+
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnSignup"
+            android:layout_marginTop="44dp"
+            app:srcCompat="@drawable/fd"
+            android:layout_centerHorizontal="true"
+            tools:ignore="MissingConstraints,UnknownId"
+            tools:layout_editor_absoluteX="154dp"
+            tools:layout_editor_absoluteY="606dp" />
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

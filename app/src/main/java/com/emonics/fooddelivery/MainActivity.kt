@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         val ConnectionManager =
             getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val btn = findViewById<View>(R.id.btnGuest) as Button
-        val button = findViewById<View>(R.id.btnSignup) as Button
+        val button = findViewById<View>(R.id.btnSignin) as Button
         val textview = findViewById<TextView>(R.id.internetchk)
         val imageView = findViewById<ImageView>(R.id.internetimage)
         val networkInfo = ConnectionManager.activeNetworkInfo
@@ -37,15 +37,15 @@ class MainActivity : AppCompatActivity() {
             val toast = Toast.makeText(applicationContext, "Continue as Guest", Toast.LENGTH_SHORT)
             toast.show()
 
-            val intent = Intent(this, FourthActivity::class.java)
+            val intent = Intent(this, RestaurantActivity::class.java)
             startActivity(intent)
         }
         button?.setOnClickListener()
         {
-            val toast = Toast.makeText(applicationContext, "SignUp", Toast.LENGTH_SHORT)
+            val toast = Toast.makeText(applicationContext, "Sign In", Toast.LENGTH_SHORT)
             toast.show()
 
-            val intent = Intent(this, SecondActivity::class.java)
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
         }

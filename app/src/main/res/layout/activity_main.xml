@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    tools:ignore="MissingClass">
 
     <RelativeLayout
         android:layout_width="414dp"
@@ -68,7 +69,7 @@
             tools:ignore="NotSibling" />
 
         <Button
-            android:id="@+id/btnSignup"
+            android:id="@+id/btnSignin"
             android:layout_width="129dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/btnGuest"
@@ -78,7 +79,7 @@
             android:backgroundTint="@color/white"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
-            android:text="SignUp"
+            android:text="Sign in"
             android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"

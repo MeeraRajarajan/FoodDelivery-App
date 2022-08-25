@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".RegistrationActivity">
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/usernameTL"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:background="#EFECEC"
+        app:endIconMode="custom"
+        app:errorEnabled="true"
+        app:helperText="Required*"
+        app:helperTextTextColor="@color/red">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/usernameET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/usernameET"
+            android:textSize="20sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordTL"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/usernameTL"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="#FFFFFF"
+        app:endIconMode="password_toggle"
+        app:errorEnabled="true"
+        app:helperText="Required*"
+        app:helperTextTextColor="@color/red">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/passwordET"
+            android:inputType="textPassword"
+            android:textSize="20sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/mobileTL"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/passwordTL"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="#FFFFFF"
+        app:errorEnabled="true"
+        app:helperText="Required*"
+        app:helperTextTextColor="@color/red">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/mobileET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/mobileET"
+            android:maxLength="10"
+            android:textSize="20sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/emailTL"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mobileTL"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="#FFFFFF"
+        app:endIconMode="custom"
+        app:errorEnabled="true"
+        app:helperText="Required*"
+        app:helperTextTextColor="@color/red">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/emailET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/emailET"
+            android:textSize="20sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/addressTL"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/emailTL"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="#FFFFFF"
+        app:errorEnabled="true"
+        app:helperText="Required*"
+        app:helperTextTextColor="@color/red">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/addressET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/addressET"
+            android:textSize="20sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/registerBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/addressTL"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#FFFFFF"
+        android:text="@string/registerBtn"
+        android:textColor="#FF0000" />
+
+</RelativeLayout>

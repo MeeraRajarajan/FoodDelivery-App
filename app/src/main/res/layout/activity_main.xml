@@ -95,12 +95,15 @@
             android:id="@+id/imageView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/btnSignup"
+            android:layout_below="@+id/btnSignin"
             android:layout_marginTop="44dp"
             app:srcCompat="@drawable/fd"
             android:layout_centerHorizontal="true"
             tools:ignore="MissingConstraints,UnknownId"
             tools:layout_editor_absoluteX="154dp"
             tools:layout_editor_absoluteY="606dp" />
+
+
+
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

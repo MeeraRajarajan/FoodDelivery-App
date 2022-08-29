@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
-    app:cardElevation="16dp"
+    app:cardElevation="10dp"
+
     tools:ignore="MissingClass">
 
     <RelativeLayout
@@ -14,39 +15,20 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="10dp">
-        <ImageView
-            android:id="@+id/imageview"
-            android:layout_width="100dp"
-            android:layout_height="100dp" />
 
         <TextView
             android:id="@+id/tvname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="40dp"
-            android:layout_marginStart="110dp"
-            android:layout_marginLeft="15dp"
             android:text=" "
             android:textSize="20sp"
             android:textStyle="bold" />
-        <TextView
-            android:id="@+id/tvdes"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tvname"
-            android:layout_marginStart="110dp"
-            android:layout_marginLeft="15dp"
-            android:text=""
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
 
         <TextView
             android:id="@+id/tvprice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/imageview"
-
+            android:layout_below="@+id/tvname"
             android:text=""
             android:textSize="20sp"
             android:textStyle="bold"
@@ -57,7 +39,6 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_alignParentBottom="true"
-            android:layout_below="@+id/tvdes"
             android:textSize="25sp"
             android:layout_marginStart="200dp"
             android:text="+" />
@@ -65,15 +46,14 @@
         <TextView
             android:id="@+id/tvcount"
             android:layout_width="50dp"
+            android:layout_height="35dp"
             android:layout_marginStart="250dp"
-            android:paddingTop="8dp"
-            android:textSize="20sp"
             android:paddingLeft="22dp"
+            android:paddingTop="10dp"
             android:paddingRight="15dp"
+            android:text="0"
             android:textColor="@color/black"
-            android:layout_below="@+id/tvdes"
-            android:layout_height="30dp"
-            android:text="0" />
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/btnremove"
@@ -87,4 +67,3 @@
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>
-

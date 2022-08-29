@@ -57,6 +57,9 @@ class CartCustomAdapter(private val cList: List<MenuItemsViewModel>, private val
         return cList.size
     }
 
+    fun getItems(): List<MenuItemsViewModel> {
+        return cList
+    }
 
     // Holds the views for adding it to image and text
     class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {

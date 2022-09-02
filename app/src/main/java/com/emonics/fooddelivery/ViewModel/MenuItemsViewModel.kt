@@ -1,4 +1,4 @@
-package com.emonics.fooddelivery
+package com.emonics.fooddelivery.ViewModel
 
 import android.os.Parcel
 import android.os.Parcelable

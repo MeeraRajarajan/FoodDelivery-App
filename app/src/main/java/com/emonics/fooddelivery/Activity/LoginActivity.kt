@@ -1,4 +1,4 @@
-package com.emonics.fooddelivery
+package com.emonics.fooddelivery.Activity
 
 
 import android.content.Intent
@@ -8,13 +8,18 @@ import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.Toast
+import com.emonics.fooddelivery.Database.AppDatabase
+import com.emonics.fooddelivery.DrawerBaseActivity
+import com.emonics.fooddelivery.R
+import com.emonics.fooddelivery.databinding.ActivityLoginBinding
+import com.emonics.fooddelivery.databinding.ActivityResturantBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlin.properties.Delegates
 
-class LoginActivity : AppCompatActivity() {
-
+class LoginActivity :  DrawerBaseActivity() {
+    lateinit var activityLoginBinding: ActivityLoginBinding
 
     private lateinit var edt_userName: EditText
     private lateinit var edt_password: EditText
@@ -34,7 +39,12 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var appDb: AppDatabase
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+      //  setContentView(R.layout.activity_login)
+
+        activityLoginBinding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(activityLoginBinding.root)
+         navView.menu.findItem(R.id.nav_home).isChecked = true
+          navView.menu.findItem(R.id.nav_home).isCheckable = true
 
         // initialize database
         appDb = AppDatabase.getDatabase(this@LoginActivity)
@@ -57,7 +67,8 @@ class LoginActivity : AppCompatActivity() {
 
                 var checkUsernamePW =
                     appDb.userDao().checkUsernameAndPassword(str_userName_id, str_password)
-
+                val userId = appDb.userDao().getUserId(str_userName_id)
+                AppDatabase.setUserId(userId)
                 println("login Successful  " + checkUsernamePW)
 
 
@@ -91,6 +102,19 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent);
         }
 
+
+
+    }
+    override fun onBackPressed() {
+        if (AppDatabase.getUserId() != 0) {
+            val a = Intent(Intent.ACTION_MAIN)
+            a.addCategory(Intent.CATEGORY_HOME)
+            a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(a)
+            return
+        } else {
+            finish()
+        }
     }
 }
 

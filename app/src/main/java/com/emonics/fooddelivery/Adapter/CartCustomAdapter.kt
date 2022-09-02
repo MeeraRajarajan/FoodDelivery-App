@@ -1,19 +1,23 @@
-package com.emonics.fooddelivery
+package com.emonics.fooddelivery.Adapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
-import androidx.appcompat.view.menu.MenuView
 import androidx.recyclerview.widget.RecyclerView
+import com.emonics.fooddelivery.Activity.CartActivity
+import com.emonics.fooddelivery.ViewModel.MenuActivityViewModel
+import com.emonics.fooddelivery.ViewModel.MenuItemsViewModel
+import com.emonics.fooddelivery.R
 
-class CartCustomAdapter(private val cList: List<MenuItemsViewModel>, private val viewModel:MenuActivityViewModel) : RecyclerView.Adapter<CartCustomAdapter.ViewHolder>() {
+class CartCustomAdapter(private val context: Context, private val cList: List<MenuItemsViewModel>, private val viewModel: MenuActivityViewModel) : RecyclerView.Adapter<CartCustomAdapter.ViewHolder>() {
     // create new views
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.viewcartdesign, parent, false)
+            .inflate(R.layout.cartviewdesign, parent, false)
 
 
         return ViewHolder(view)
@@ -36,6 +40,7 @@ class CartCustomAdapter(private val cList: List<MenuItemsViewModel>, private val
             cList[position].Qty = cList[position].Qty + 1
             holder.actextView.text = viewModel.updateCount(curVal).toString()
             holder.tvprice.text = "$"+"${cList[position].Price * cList[position].Qty}"
+            (context as CartActivity).updateTotalPrice(calculateTotalPrice())
         }
 
         holder.acbutton1.setOnClickListener {
@@ -48,9 +53,22 @@ class CartCustomAdapter(private val cList: List<MenuItemsViewModel>, private val
 
             holder.actextView.text = viewModel.removeCount(curVal).toString()
             holder.tvprice.text = "$"+"${cList[position].Price * cList[position].Qty}"
+
+            (context as CartActivity).updateTotalPrice(calculateTotalPrice())
         }
     }
 
+    fun calculateTotalPrice(): Double
+    {
+        var totalprice :Double= 0.0
+        cList.forEach {
+            var price = it.Price
+            var qty = it.Qty
+            var tp = price * qty
+            totalprice += tp
+        }
+        return totalprice
+    }
 
     // return the number of the items in the list
     override fun getItemCount(): Int {

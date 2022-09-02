@@ -1,4 +1,5 @@
-package com.emonics.fooddelivery
+package com.emonics.fooddelivery.Database
+
 
 import android.content.Context
 import androidx.room.Database
@@ -12,6 +13,7 @@ abstract class AppDatabase: RoomDatabase() {
     companion object {
         @Volatile
         private var INSTANCE : AppDatabase? = null
+        private var userId: Int = 0
 
         fun getDatabase(context: Context) :AppDatabase {
             val tempInstance = INSTANCE
@@ -27,6 +29,14 @@ abstract class AppDatabase: RoomDatabase() {
                 INSTANCE = instance
                 return instance
             }
+        }
+
+        fun setUserId(id: Int) {
+            userId = id
+        }
+
+        fun getUserId(): Int {
+            return userId
         }
     }
 }

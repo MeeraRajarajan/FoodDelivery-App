@@ -3,18 +3,36 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Sudha/AndroidStudioProjects/FoodDelivery/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.1555" />
+        <entry key="..\:/Users/Sudha/AndroidStudioProjects/FoodDelivery/app/src/main/res/drawable/ic_baseline_exit_to_app_24.xml" value="0.1555" />
+        <entry key="..\:/Users/Sudha/AndroidStudioProjects/FoodDelivery/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.1555" />
         <entry key="..\:/Users/Sudha/AndroidStudioProjects/FoodDelivery/app/src/main/res/drawable/ic_check_mark.xml" value="0.1555" />
+        <entry key="..\:/Users/Sudha/AndroidStudioProjects/FoodDelivery/app/src/main/res/drawable/ic_credit_card.xml" value="0.1585" />
+        <entry key="..\:/Users/Sudha/AndroidStudioProjects/FoodDelivery/app/src/main/res/drawable/ic_date.xml" value="0.1585" />
+        <entry key="..\:/Users/Sudha/AndroidStudioProjects/FoodDelivery/app/src/main/res/drawable/ic_key.xml" value="0.1585" />
         <entry key="..\:/Users/Sudha/AndroidStudioProjects/FoodDelivery/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2115" />
+        <entry key="..\:/Users/Sudha/AndroidStudioProjects/FoodDelivery/app/src/main/res/drawable/ic_person.xml" value="0.1585" />
         <entry key="..\:/Users/Sudha/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout-land/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Sudha/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/activity_account.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Sudha/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/activity_cart.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Sudha/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/activity_delivery.xml" value="0.18" />
         <entry key="..\:/Users/Sudha/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/activity_fourth.xml" value="0.1" />
         <entry key="..\:/Users/Sudha/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/activity_login.xml" value="0.19010416666666666" />
         <entry key="..\:/Users/Sudha/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/Sudha/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/activity_menu.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Sudha/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/activity_payment.xml" value="0.1" />
+        <entry key="..\:/Users/Sudha/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/activity_payment_datails.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Sudha/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/activity_registration.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Sudha/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/activity_resturant.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Sudha/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/activity_second.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Sudha/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/activity_sign_up.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/Sudha/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/card_view_design.xml" value="0.1675213675213675" />
+        <entry key="..\:/Users/Sudha/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/activity_submission.xml" value="0.1" />
+        <entry key="..\:/Users/Sudha/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/card_view_design.xml" value="0.1" />
+        <entry key="..\:/Users/Sudha/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/fragment_home.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Sudha/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/fragment_restaurants.xml" value="0.1" />
+        <entry key="..\:/Users/Sudha/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/fragment_restaurants__list_american.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Sudha/AndroidStudioProjects/FoodDelivery/app/src/main/res/layout/ic_person.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Sudha/AndroidStudioProjects/FoodDelivery/app/src/main/res/menu/nav_menu.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>

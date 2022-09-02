@@ -1,4 +1,4 @@
-package com.emonics.fooddelivery
+package com.emonics.fooddelivery.Adapter
 
 
 import android.view.LayoutInflater
@@ -8,8 +8,14 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.emonics.fooddelivery.ViewModel.MenuItemsViewModel
+import com.emonics.fooddelivery.R
+import com.emonics.fooddelivery.ViewModel.MenuActivityViewModel
 
-class MenuCustomAdapter(private val mList: List<MenuItemsViewModel>, private val viewModel: MenuActivityViewModel?) : RecyclerView.Adapter<MenuCustomAdapter.ViewHolder>() {
+
+class MenuCustomAdapter(private val mList: List<MenuItemsViewModel>,private val viewModel:MenuActivityViewModel) : RecyclerView.Adapter<MenuCustomAdapter.ViewHolder>() {
+
+
 
     // create new views
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -35,6 +41,8 @@ class MenuCustomAdapter(private val mList: List<MenuItemsViewModel>, private val
         holder.textView.text = MenuItemsViewModel.text
         holder.tvdescription.text = MenuItemsViewModel.description.toString()
         holder.tvprice.text = "$"+MenuItemsViewModel.Price.toString()
+
+
 
         holder.acbutton.setOnClickListener {
             var curVal = 0
@@ -82,3 +90,5 @@ class MenuCustomAdapter(private val mList: List<MenuItemsViewModel>, private val
 
     }
 }
+
+

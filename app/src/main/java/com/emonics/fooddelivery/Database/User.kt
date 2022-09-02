@@ -1,4 +1,4 @@
-package com.emonics.fooddelivery
+package com.emonics.fooddelivery.Database
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

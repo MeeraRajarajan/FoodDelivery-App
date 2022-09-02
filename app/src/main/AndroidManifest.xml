@@ -16,25 +16,45 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodDelivery"
         tools:targetApi="31">
+
         <activity
-            android:name=".CartActivity"
+            android:name=".DeliveryActivity"
             android:exported="false" />
         <activity
-            android:name=".MenuActivity"
+            android:name=".PaymentDatailsActivity"
             android:exported="false" />
         <activity
-            android:name=".RegistrationActivity"
+            android:name=".PaymentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SubmissionActivity"
             android:exported="false" />
 
         <activity
-            android:name=".LoginActivity"
+        android:name=".AccountActivity"
+        android:exported="false" />
+        <activity
+            android:name=".Activity.CartActivity"
             android:exported="false" />
         <activity
-            android:name=".RestaurantActivity"
+            android:name=".Activity.MenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DrawerBaseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.RegistrationActivity"
             android:exported="false" />
 
         <activity
-            android:name=".MainActivity"
+            android:name=".Activity.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.RestaurantActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".Activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

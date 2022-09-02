@@ -1,7 +1,6 @@
-package com.emonics.fooddelivery
+package com.emonics.fooddelivery.Activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextUtils
@@ -10,6 +9,11 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.core.widget.doOnTextChanged
+import com.emonics.fooddelivery.Database.AppDatabase
+import com.emonics.fooddelivery.Database.User
+import com.emonics.fooddelivery.DrawerBaseActivity
+import com.emonics.fooddelivery.R
+import com.emonics.fooddelivery.databinding.ActivityRegistrationBinding
 import com.google.android.material.textfield.TextInputLayout
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -17,17 +21,22 @@ import kotlinx.coroutines.launch
 import java.lang.Exception
 import java.util.*
 
-class RegistrationActivity : AppCompatActivity() {
+class RegistrationActivity : DrawerBaseActivity() {
     lateinit var usernameTL: TextInputLayout
     lateinit var emailTL: TextInputLayout
     var usernameBool: Boolean = false
     var emailBool: Boolean = false
 
     private lateinit var appDb : AppDatabase
+    lateinit var activityRegistrationBinding: ActivityRegistrationBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_registration)
+        activityRegistrationBinding = ActivityRegistrationBinding.inflate(layoutInflater)
+        setContentView(activityRegistrationBinding.root)
+        navView.menu.findItem(R.id.nav_home).isChecked = true
+        navView.menu.findItem(R.id.nav_home).isCheckable = true
+
 
         // initialize database
         appDb = AppDatabase.getDatabase(this@RegistrationActivity)
@@ -214,6 +223,17 @@ class RegistrationActivity : AppCompatActivity() {
         } else {
             addressTL.error = "Enter address!"
             false
+        }
+    }
+    override fun onBackPressed() {
+        if (AppDatabase.getUserId() != 0) {
+            val a = Intent(Intent.ACTION_MAIN)
+            a.addCategory(Intent.CATEGORY_HOME)
+            a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(a)
+            return
+        } else {
+            finish()
         }
     }
 }

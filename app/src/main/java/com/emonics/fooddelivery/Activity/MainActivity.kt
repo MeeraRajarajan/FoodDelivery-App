@@ -1,4 +1,4 @@
-package com.emonics.fooddelivery
+package com.emonics.fooddelivery.Activity
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog
@@ -13,6 +13,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.emonics.fooddelivery.R
 
 class MainActivity : AppCompatActivity() {
     var builder: AlertDialog.Builder? = null

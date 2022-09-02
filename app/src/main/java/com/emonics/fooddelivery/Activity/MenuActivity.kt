@@ -1,20 +1,34 @@
-package com.emonics.fooddelivery
+package com.emonics.fooddelivery.Activity
 
 import android.content.Intent
 import android.os.Bundle
 import android.os.Parcelable
 import android.widget.Button
 import android.widget.ImageView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.emonics.fooddelivery.Adapter.MenuCustomAdapter
+import com.emonics.fooddelivery.Database.AppDatabase
+import com.emonics.fooddelivery.DrawerBaseActivity
+import com.emonics.fooddelivery.R
+import com.emonics.fooddelivery.ViewModel.MenuActivityViewModel
+import com.emonics.fooddelivery.ViewModel.MenuItemsViewModel
+import com.emonics.fooddelivery.databinding.ActivityMenuBinding
 
-class MenuActivity : AppCompatActivity() {
+
+class MenuActivity :  DrawerBaseActivity() {
     private lateinit var viewModel : MenuActivityViewModel
+
+    lateinit var activityMenuBinding: ActivityMenuBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_menu)
+        activityMenuBinding = ActivityMenuBinding.inflate(layoutInflater)
+        setContentView(activityMenuBinding.root)
+        navView.menu.findItem(R.id.nav_home).isChecked = true
+        navView.menu.findItem(R.id.nav_home).isCheckable = true
+
 
         viewModel = ViewModelProvider(this).get(MenuActivityViewModel::class.java)
 
@@ -44,12 +58,12 @@ class MenuActivity : AppCompatActivity() {
         // This will pass the ArrayList to our Adapter
 
         val thaidata = ArrayList<MenuItemsViewModel>()
-        thaidata.add(MenuItemsViewModel( R.drawable.noodle_soup, "Noodle Soup", "A type of noodle soup that can be made with chicken, pork, or beef as well as either rice noodles or egg noodles.", 15.67,0))
+        thaidata.add(MenuItemsViewModel(R.drawable.noodle_soup, "Noodle Soup", "A type of noodle soup that can be made with chicken, pork, or beef as well as either rice noodles or egg noodles.", 15.67,0))
         thaidata.add(MenuItemsViewModel(R.drawable.spicy_shrimp_soup, "Spicy Shrimp Soup", " A soup created with Thai ingredients like lemongrass, chilli, galangal, kaffier lime leaves, shallots, fresh lime juice and fish sauce.", 19.76,0))
-        thaidata.add(MenuItemsViewModel( R.drawable.chicken_coconut_soup, "Chicken in Coconut Soup", "This soup includes fiery chilies, thinly sliced young galangal, crushed shallots, stalks of lemongrass and tender strips of chicken and comes with lots of creamy coconut milk.", 13.99,0))
-        thaidata.add(MenuItemsViewModel( R.drawable.spicy_papaya_salad, "Spicy Green Papaya Salad", "Consists of shredded green papaya, tomatoes, carrots, peanuts, dried shrimp, runner beans, palm sugar, tamarind pulp, fish sauce, lime juice, garlic and chillies.", 20.99,0))
+        thaidata.add(MenuItemsViewModel(R.drawable.chicken_coconut_soup, "Chicken in Coconut Soup", "This soup includes fiery chilies, thinly sliced young galangal, crushed shallots, stalks of lemongrass and tender strips of chicken and comes with lots of creamy coconut milk.", 13.99,0))
+        thaidata.add(MenuItemsViewModel(R.drawable.spicy_papaya_salad, "Spicy Green Papaya Salad", "Consists of shredded green papaya, tomatoes, carrots, peanuts, dried shrimp, runner beans, palm sugar, tamarind pulp, fish sauce, lime juice, garlic and chillies.", 20.99,0))
         thaidata.add(MenuItemsViewModel(R.drawable.fried_noodles, "Thai Style Fried Noodles", "A fried noodle dish which is usually made with shrimp or chicken with a vegetarian option.", 16.99,0))
-        thaidata.add(MenuItemsViewModel( R.drawable.fried_rice, "Fried Rice", "Popular dish consisting of fried rice, egg, onion and a few herbs.", 18.79,0))
+        thaidata.add(MenuItemsViewModel(R.drawable.fried_rice, "Fried Rice", "Popular dish consisting of fried rice, egg, onion and a few herbs.", 18.79,0))
 
         val bundle = intent.extras
         var adapter: MenuCustomAdapter? = null
@@ -59,7 +73,7 @@ class MenuActivity : AppCompatActivity() {
         // getting the string back
         if (s.toString() == "American") {
             imageView.setImageResource(R.drawable.american)
-            adapter = MenuCustomAdapter(americandata,viewModel)
+            adapter = MenuCustomAdapter(americandata, viewModel)
         } else if (s.toString() == "Chinese") {
             imageView.setImageResource(R.drawable.ch_1)
             adapter = MenuCustomAdapter(chinesedata,viewModel)
@@ -79,5 +93,15 @@ class MenuActivity : AppCompatActivity() {
         }
     }
 
-
+    override fun onBackPressed() {
+        if (AppDatabase.getUserId() != 0) {
+            val a = Intent(Intent.ACTION_MAIN)
+            a.addCategory(Intent.CATEGORY_HOME)
+            a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(a)
+            return
+        } else {
+            finish()
+        }
+    }
 }
